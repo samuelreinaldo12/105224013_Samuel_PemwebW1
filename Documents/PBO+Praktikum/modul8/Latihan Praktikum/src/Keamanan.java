@@ -1,0 +1,3 @@
+interface Keamanan {
+    boolean autentikasi();
+}
