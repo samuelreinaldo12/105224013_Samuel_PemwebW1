@@ -1,0 +1,6 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0b2858;
+}
