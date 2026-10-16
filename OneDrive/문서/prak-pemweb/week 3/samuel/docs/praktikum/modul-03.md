@@ -77,6 +77,10 @@ const [filter, setFilter] = useState<Filter>("semua");
 3. **Pemicu Render Ulang (*Re-render*):** Pemanggilan fungsi pengubah *state* merender ulang komponen `DaftarItem`. Variabel `hasil` dihitung secara dinamis dari props `items` yang disaring berdasarkan `kataKunci` dan `filter` terbaru.
 4. **Pembaharuan Tampilan:** Komponen `KartuItem` yang ditampilkan otomatis menyesuaikan dengan daftar `hasil` penyaringan, dan pembaca layar mendapatkan pembaruan jumlah via atribut `aria-live="polite"`.
 
+### Bukti Tampilan Daftar Item
+
+![Tampilan DaftarItem pada halaman katalog](daftaritem.png)
+
 ---
 
 ## 4. Pengambilan Data
@@ -108,6 +112,10 @@ useEffect(() => {
 * **Kondisi Memuat (*Loading*):** Saat pertama kali diakses, *state* `status` bernilai `"memuat"` dan menampilkan teks *"Memuat data..."*. Kondisi ini diverifikasi menggunakan pembatasan kecepatan jaringan (*Network Throttling*) "Slow 4G" pada DevTools.
 * **Kondisi Berhasil (*Success*):** Ketika file `/data/item.json` sukses diunduh (`res.ok === true`), *state* diubah ke `"berhasil"` dan menampilkan 3 item terbaru.
 * **Kondisi Gagal (*Error*):** Pengujian dilakukan dengan mengarahkan `fetch()` ke URL yang tidak ada (`/data/tidak-ada.json`). Server mengembalikan status HTTP 404, memicu penangkapan *catch*, dan menampilkan pesan alert *"Data gagal dimuat. Muat ulang halaman."*.
+
+### Bukti Pengambilan Data JSON
+
+![Bukti Fetch API mengambil item.json pada panel Network DevTools](fetchjson.png)
 
 ---
 
